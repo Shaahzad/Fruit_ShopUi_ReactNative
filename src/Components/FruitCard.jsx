@@ -23,7 +23,7 @@ export default function FruitCard({fruit}) {
         shadowOffset: {width: 0, height: 50},
      }}
      >
-    <Image source={fruit.image} style={{width: 260, height: 210, borderRadius: 40, resizeMode: 'contain', 
+    <Image source={fruit.image} style={{width: 260, height: 150, borderRadius: 40, resizeMode: 'contain', 
      marginTop: 10  
     }}/>
     </View>

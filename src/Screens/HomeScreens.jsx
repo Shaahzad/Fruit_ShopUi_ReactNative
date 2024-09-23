@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Bars3CenterLeftIcon,  ShoppingCartIcon } from 'react-native-heroicons/solid'
 import { category, FeaturedFruits } from '../Constant'
 import FruitCard from '../Components/FruitCard'
+import Fruitcardsales from '../Components/Fruitcardsales'
 
 export default function HomeScreens() {
   const [activecategory, setActiveCategory] = useState('orange')
@@ -61,6 +62,14 @@ export default function HomeScreens() {
 
 
       {/* Hot sales */}
+      <View className='mt-8 pl-5 space-y-1'>
+       <Text className='text-xl font-bold'>Hot Sales</Text>
+       <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{overflow: 'visible'}}>
+          {
+            [...FeaturedFruits].reverse().map((fruit,index )=> <Fruitcardsales key={index} fruit={fruit}/>)
+          }
+       </ScrollView>
+      </View>
       </SafeAreaView>
   )
 }
