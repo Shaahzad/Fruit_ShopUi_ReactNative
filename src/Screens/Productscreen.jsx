@@ -23,7 +23,7 @@ export default function Productscreen(props) {
                 shadowRadius: 40,
                 shadowOpacity: 0.6,
                 shadowOffset: {width: 0, height: 50},}}>
-                <Image source={fruit.image} style={{width: 290, height: 290, resizeMode: 'contain'}}/>
+                <Image source={fruit.image} style={{width: 290, height: 180, resizeMode: 'contain'}}/>
             </View>
         </SafeAreaView>
         <View className='bg-orange-50 flex-1 px-6 space-y-2'
@@ -45,19 +45,24 @@ export default function Productscreen(props) {
          emptyColor='#ccc'
          onChange={rating => console.log(rating)}
          />
-         <ScrollView showsVerticalScrollIndicator={false} style={{height: 100}}>
+         <View showsVerticalScrollIndicator={false} style={{height: 200}}>
             <Text className="tracking-wide py-3">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, laudantium blanditiis! Officiis id dicta excepturi inventore itaque neque dolores et delectus, fuga culpa reiciendis laudantium minima quam, corrupti, animi nihil earum expedita? Quod fugiat maiores inventore, sunt nisi aperiam pariatur temporibus modi a, neque ipsam earum asperiores. Laudantium, expedita eum.
                 </Text>
-         </ScrollView>
+         </View>
          <View className='flex-row justify-between items-center'>
             <Text className='text-3xl'>{fruit.price}</Text> 
-            <TouchableOpacity className='text-3xl'
+            <TouchableOpacity className='text-3xl p-3 ml-6 flex-1 rounded-xl'
+            onPress={() => navigation.navigate('Cart')}
             style={{
-                backgroundColor: fruit.co
+                backgroundColor: fruit.shadow,
+                shadowColor: fruit.shadow,
+                shadowOpacity: 0.5,
+                shadowRadius: 25,
+                shadowOffset: {width: 0, height: 15},
             }}
             >
-                <Text className='text-3xl p-3 ml-6 text-center'>Add to cart</Text>
+            <Text className='text-xl text-center text-white'>Add to cart</Text>
             </TouchableOpacity>
          </View>
         </View>
